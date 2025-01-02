@@ -1,0 +1,176 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    height: 60px;
+}
+
+.logo {
+    height: 150px;
+    width: auto;
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.button-link {
+    border: none;
+    background: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+}
+
+.nav-link:hover,
+.button-link:hover {
+    color: #007bff;
+}
+
+/* Main Content Section */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Hero Text Section */
+.hero-text {
+    text-align: left;
+    margin-top: 30px;
+    max-width: 600px;
+    width: 100%;
+    position: absolute;
+    left: 10%;
+    top: 150px;
+}
+
+.hero-heading {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 52px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.hero-subheading {
+    font-family: 'Alatsi', sans-serif;
+    font-weight: regular;
+    font-size: 18px;
+    color: #555;
+    opacity: 0.7;
+}
+
+/* Welcome Section */
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.welcome-image {
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+.welcome-text {
+    font-size: 24px;
+    color: #555;
+}
+
+/* Updated About Us Section */
+.about-us-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 20px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.about-image {
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.text-section {
+    max-width: 500px;
+    text-align: left;
+}
+
+.text-section h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.text-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Add this container to center the content horizontally */
+.content-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Apply the container to relevant sections */
+.main-content {
+    width: 100%;
+}
+
+.welcome-section {
+    width: 100%;
+}
+
+.about-us-section {
+    width: 100%;
+}

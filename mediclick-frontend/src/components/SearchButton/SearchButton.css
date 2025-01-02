@@ -1,0 +1,78 @@
+/* Search Bar Container */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+/* Doctor/Specialty Input */
+.search-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Location Input */
+.location-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.location-input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+.location-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Search Button */
+.search-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.button-icon {
+    width: 18px;
+    height: 18px;
+}

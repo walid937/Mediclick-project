@@ -1,0 +1,125 @@
+.login-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #000;
+    /* Dark solid background */
+    color: #fff;
+}
+
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000000, #3c3c3c);
+    /* Gradient for the left side */
+    padding: 20px;
+}
+
+.login-logo {
+    width: 630px;
+    /* Set the desired width */
+    height: 630px;
+    /* Set the desired height */
+    object-fit: contain;
+    /* Ensures the image scales correctly while maintaining aspect ratio */
+    margin-bottom: 20px;
+    /* Keep space below the logo */
+}
+
+h3 {
+    font-size: 28px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+    /* Ensure the heading is also black */
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    /* Set background to white */
+    color: #000;
+    /* Set text color to black */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    color: #000;
+    /* Ensure form text is black */
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.login-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+    color: #000;
+    /* Ensure input text is black */
+    font-size: 14px;
+}
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.forgot-password {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+    color: #000;
+    /* Ensure forgot password text is black */
+}
+
+.forgot-password a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+    /* Ensure paragraph text is black */
+}
+
+a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
