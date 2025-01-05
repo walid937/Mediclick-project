@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthService from '../AuthService';
+import api from "../../../services/api"; // Corrected import statement
 import './Login.css'; // Import the Login.css file
 
 const Login = () => {
@@ -12,8 +12,9 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const userData = await AuthService.login({ email, password });
-            if (userData) {
+            const response = await api.post('/api/auth/login', { email, password });
+            if (response.data) {
+                localStorage.setItem('user', JSON.stringify(response.data)); // Save user data (e.g., JWT token)
                 navigate('/dashboard'); // Redirect to dashboard after successful login
             }
         } catch (err) {

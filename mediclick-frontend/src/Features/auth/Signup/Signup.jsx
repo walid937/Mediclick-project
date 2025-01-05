@@ -1,7 +1,6 @@
-// src/features/auth/Signup.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthService from '../AuthService';
+import api from "../../../services/api"; // Corrected import statement
 import './Signup.css'; // Import the Signup.css file
 
 const Signup = () => {
@@ -10,14 +9,18 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('patient'); // Default role is 'patient'
     const [specialty, setSpecialty] = useState(''); // New state for specialty
+    const [license, setLicense] = useState(''); // New state for license number
+    const [phoneNumber, setPhoneNumber] = useState(''); // New state for phone number
+    const [dateOfBirth, setDateOfBirth] = useState(''); // New state for date of birth
+    const [ville, setVille] = useState(''); // New state for ville
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleSignup = async (e) => {
         e.preventDefault();
         try {
-            const userData = await AuthService.signup({ name, email, password, role, specialty });
-            if (userData) {
+            const response = await api.post('/api/auth/signup', { name, email, password, role, specialty, license, phoneNumber, dateOfBirth, ville });
+            if (response.data) {
                 navigate('/login'); // Redirect to login page after successful signup
             }
         } catch (err) {
@@ -84,19 +87,63 @@ const Signup = () => {
                         </select>
                     </div>
 
-                    {/* Conditional rendering of the specialty input field */}
+                    {/* Conditional rendering of the specialty and license number input fields */}
                     {role === 'doctor' && (
-                        <div className="input-group">
-                            <label htmlFor="specialty">Enter your specialty</label>
-                            <input
-                                type="text"
-                                id="specialty"
-                                value={specialty}
-                                onChange={(e) => setSpecialty(e.target.value)}
-                                className="signup-input"
-                            />
-                        </div>
+                        <>
+                            <div className="input-group">
+                                <label htmlFor="specialty">Enter your specialty</label>
+                                <input
+                                    type="text"
+                                    id="specialty"
+                                    value={specialty}
+                                    onChange={(e) => setSpecialty(e.target.value)}
+                                    className="signup-input"
+                                />
+                            </div>
+                            <div className="input-group">
+                                <label htmlFor="license">Enter your license number</label>
+                                <input
+                                    type="text"
+                                    id="license"
+                                    value={license}
+                                    onChange={(e) => setLicense(e.target.value)} // Add a new state for license
+                                    className="signup-input"
+                                />
+                            </div>
+                        </>
                     )}
+
+                    {/* New inputs for PhoneNumber, DateOfBirth, and Ville */}
+                    <div className="input-group">
+                        <label htmlFor="phoneNumber">Enter your phone number</label>
+                        <input
+                            type="text"
+                            id="phoneNumber"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            className="signup-input"
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="dateOfBirth">Enter your date of birth</label>
+                        <input
+                            type="date"
+                            id="dateOfBirth"
+                            value={dateOfBirth}
+                            onChange={(e) => setDateOfBirth(e.target.value)}
+                            className="signup-input"
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="ville">Enter your city (Ville)</label>
+                        <input
+                            type="text"
+                            id="ville"
+                            value={ville}
+                            onChange={(e) => setVille(e.target.value)}
+                            className="signup-input"
+                        />
+                    </div>
 
                     {error && <p className="error-message">{error}</p>}
                     <button type="submit" className="signup-button">
