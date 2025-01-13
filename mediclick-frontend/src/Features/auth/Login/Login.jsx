@@ -1,3 +1,4 @@
+// src/Features/auth/Login/Login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from "../../../services/api"; // Corrected import statement
@@ -12,10 +13,15 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await api.post('/api/auth/login', { email, password });
+            const response = await api.post('/api/users/login', { email, password });
             if (response.data) {
                 localStorage.setItem('user', JSON.stringify(response.data)); // Save user data (e.g., JWT token)
-                navigate('/dashboard'); // Redirect to dashboard after successful login
+                // Check if the role is 'patient' and navigate accordingly
+                if (response.data.role === 'patient') {
+                    navigate('/PatientHomePage');
+                } else {
+                    navigate('/dashboard'); // Redirect to dashboard for other roles
+                }
             }
         } catch (err) {
             setError('Invalid email or password');
@@ -42,7 +48,7 @@ const Login = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                             className="login-input"
-                            placeholder="Enter your email" // Placeholder text inside the input
+                            placeholder="Enter your email"
                         />
                     </div>
                     <div className="input-group">
@@ -53,7 +59,7 @@ const Login = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                             className="login-input"
-                            placeholder="Enter your password" // Placeholder text inside the input
+                            placeholder="Enter your password"
                         />
                     </div>
                     {error && <p className="error-message">{error}</p>}

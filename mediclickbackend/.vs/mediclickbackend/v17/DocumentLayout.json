@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|c:\\users\\marjane\\onedrive\\bureau\\cabinet\\mediclickbackend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|c:\\users\\marjane\\onedrive\\bureau\\cabinet\\mediclickbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|c:\\users\\marjane\\onedrive\\bureau\\cabinet\\mediclickbackend\\controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|solutionrelative:controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|c:\\users\\marjane\\onedrive\\bureau\\cabinet\\mediclickbackend\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|c:\\users\\marjane\\onedrive\\bureau\\cabinet\\mediclickbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|c:\\users\\marjane\\onedrive\\bureau\\cabinet\\mediclickbackend\\mediclickbackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|solutionrelative:mediclickbackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|c:\\users\\marjane\\onedrive\\bureau\\cabinet\\mediclickbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1A2DF903-9822-4A65-98AE-CE4B3780E34C}|mediclickbackend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DoctorsController.cs",
+              "DocumentMoniker": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\Controllers\\DoctorsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DoctorsController.cs",
+              "ToolTip": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\Controllers\\DoctorsController.cs*",
+              "RelativeToolTip": "Controllers\\DoctorsController.cs*",
+              "ViewState": "AgIAACsAAAAAAAAAAAAswD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T07:14:12.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T12:41:05.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T12:28:50.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "Models\\Users.cs",
+              "ToolTip": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\Models\\Users.cs",
+              "RelativeToolTip": "Models\\Users.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T12:04:15.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T09:42:37.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "mediclickbackend",
+              "DocumentMoniker": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\mediclickbackend.csproj",
+              "RelativeDocumentMoniker": "mediclickbackend.csproj",
+              "ToolTip": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\mediclickbackend.csproj",
+              "RelativeToolTip": "mediclickbackend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-11T07:14:04.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-07T12:51:18.259Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

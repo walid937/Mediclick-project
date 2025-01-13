@@ -1,30 +1,50 @@
+// src/Features/auth/Signup/Signup.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from "../../../services/api"; // Corrected import statement
-import './Signup.css'; // Import the Signup.css file
+import api from "../../../services/api";
+import './Signup.css';
 
 const Signup = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [role, setRole] = useState('patient'); // Default role is 'patient'
-    const [specialty, setSpecialty] = useState(''); // New state for specialty
-    const [license, setLicense] = useState(''); // New state for license number
-    const [phoneNumber, setPhoneNumber] = useState(''); // New state for phone number
-    const [dateOfBirth, setDateOfBirth] = useState(''); // New state for date of birth
-    const [ville, setVille] = useState(''); // New state for ville
+    const [role, setRole] = useState('patient');
+    const [specialty, setSpecialty] = useState('');
+    const [license, setLicense] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [dateOfBirth, setDateOfBirth] = useState('');
+    const [ville, setVille] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleSignup = async (e) => {
         e.preventDefault();
         try {
-            const response = await api.post('/api/auth/signup', { name, email, password, role, specialty, license, phoneNumber, dateOfBirth, ville });
+            const response = await api.post('/api/users/signup', {
+                name,
+                email,
+                password,
+                role,
+                specialty,
+                license,
+                phoneNumber,
+                dateOfBirth,
+                ville,
+            });
             if (response.data) {
-                navigate('/login'); // Redirect to login page after successful signup
+                // If the role is 'patient', navigate to PatientHomePage
+                if (role === 'patient') {
+                    navigate('/PatientHomePage');
+                } else {
+                    navigate('/login'); // Redirect to login for other roles
+                }
             }
         } catch (err) {
-            setError('Failed to create an account. Please try again.');
+            if (err.response && err.response.data && err.response.data.message) {
+                setError(err.response.data.message); // Show server error message
+            } else {
+                setError('Failed to create an account. Please try again.');
+            }
         }
     };
 
@@ -49,6 +69,7 @@ const Signup = () => {
                             onChange={(e) => setName(e.target.value)}
                             required
                             className="signup-input"
+                            autoComplete="name"
                         />
                     </div>
                     <div className="input-group">
@@ -60,6 +81,7 @@ const Signup = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                             className="signup-input"
+                            autoComplete="email"
                         />
                     </div>
                     <div className="input-group">
@@ -71,6 +93,7 @@ const Signup = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                             className="signup-input"
+                            autoComplete="new-password"
                         />
                     </div>
                     <div className="input-group">
@@ -83,11 +106,10 @@ const Signup = () => {
                         >
                             <option value="patient">Patient</option>
                             <option value="doctor">Doctor</option>
-                            <option value="admin">Admin</option> {/* Added Admin role */}
+                            <option value="admin">Admin</option>
                         </select>
                     </div>
 
-                    {/* Conditional rendering of the specialty and license number input fields */}
                     {role === 'doctor' && (
                         <>
                             <div className="input-group">
@@ -98,6 +120,7 @@ const Signup = () => {
                                     value={specialty}
                                     onChange={(e) => setSpecialty(e.target.value)}
                                     className="signup-input"
+                                    autoComplete="off"
                                 />
                             </div>
                             <div className="input-group">
@@ -106,14 +129,14 @@ const Signup = () => {
                                     type="text"
                                     id="license"
                                     value={license}
-                                    onChange={(e) => setLicense(e.target.value)} // Add a new state for license
+                                    onChange={(e) => setLicense(e.target.value)}
                                     className="signup-input"
+                                    autoComplete="off"
                                 />
                             </div>
                         </>
                     )}
 
-                    {/* New inputs for PhoneNumber, DateOfBirth, and Ville */}
                     <div className="input-group">
                         <label htmlFor="phoneNumber">Enter your phone number</label>
                         <input
@@ -122,6 +145,7 @@ const Signup = () => {
                             value={phoneNumber}
                             onChange={(e) => setPhoneNumber(e.target.value)}
                             className="signup-input"
+                            autoComplete="tel"
                         />
                     </div>
                     <div className="input-group">
@@ -132,6 +156,7 @@ const Signup = () => {
                             value={dateOfBirth}
                             onChange={(e) => setDateOfBirth(e.target.value)}
                             className="signup-input"
+                            autoComplete="bday"
                         />
                     </div>
                     <div className="input-group">
@@ -142,6 +167,7 @@ const Signup = () => {
                             value={ville}
                             onChange={(e) => setVille(e.target.value)}
                             className="signup-input"
+                            autoComplete="address-level2"
                         />
                     </div>
 

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\mediclick-backend",
+    "\\mediclick-backend\\MediclickBackend",
+    "\\mediclick-backend\\MediclickBackend\\Controllers",
+    "\\mediclick-backend\\MediclickBackend\\Data",
+    "\\mediclick-backend\\MediclickBackend\\Migrations",
+    "\\mediclick-backend\\MediclickBackend\\Models"
+  ],
+  "SelectedNode": "\\mediclick-backend\\MediclickBackend\\Data\\CabinetDbContext.cs",
+  "PreviewInSolutionExplorer": false
+}

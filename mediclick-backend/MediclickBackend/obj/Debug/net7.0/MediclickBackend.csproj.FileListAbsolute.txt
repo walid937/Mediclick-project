@@ -1,7 +1,0 @@
-C:\Users\marjane\OneDrive\Bureau\CABINET\mediclick-backend\MediclickBackend\obj\Debug\net7.0\MediclickBackend.csproj.AssemblyReference.cache
-C:\Users\marjane\OneDrive\Bureau\CABINET\mediclick-backend\MediclickBackend\obj\Debug\net7.0\MediclickBackend.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\marjane\OneDrive\Bureau\CABINET\mediclick-backend\MediclickBackend\obj\Debug\net7.0\MediclickBackend.AssemblyInfoInputs.cache
-C:\Users\marjane\OneDrive\Bureau\CABINET\mediclick-backend\MediclickBackend\obj\Debug\net7.0\MediclickBackend.AssemblyInfo.cs
-C:\Users\marjane\OneDrive\Bureau\CABINET\mediclick-backend\MediclickBackend\obj\Debug\net7.0\MediclickBackend.csproj.CoreCompileInputs.cache
-C:\Users\marjane\OneDrive\Bureau\CABINET\mediclick-backend\MediclickBackend\obj\Debug\net7.0\MediclickBackend.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\marjane\OneDrive\Bureau\CABINET\mediclick-backend\MediclickBackend\obj\Debug\net7.0\MediclickBackend.MvcApplicationPartsAssemblyInfo.cache

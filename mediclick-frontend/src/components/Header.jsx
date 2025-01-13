@@ -10,6 +10,7 @@ function Header() {
                     <li><a href="#">Logi</a></li>
                 </ul>
             </nav>
+
         </header>
     )
 
