@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();  // Use AddControllers for API controllers (not AddControllersWithViews)
 
 // Add Entity Framework Core with SQL Server (change the connection string as needed)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -54,6 +54,10 @@ app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Enable API controllers routing
+app.MapControllers();  // This line is necessary to enable API route mapping
+
+// If you want to keep MVC routes (for views), you can still add this part:
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

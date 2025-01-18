@@ -1,61 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// DoctorController.cs
+
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using mediclickbackend.Data;
 using mediclickbackend.Models;
-using System.Collections.Generic;
+using mediclickbackend.Data;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace mediclickbackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class DoctorController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public UserController(ApplicationDbContext context)
+        public DoctorController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/user/doctors
-        [HttpGet("doctors")]
-        public async Task<ActionResult<IEnumerable<User>>> GetDoctors(string name, string specialty)
+        // GET: api/doctor
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<User>>> GetDoctors()
         {
-            var query = _context.Users.AsQueryable();
+            // Fetch all users with the role 'doctor' from the database
+            var doctors = await _context.Users
+                                         .Where(u => u.Role == "doctor")
+                                         .ToListAsync();
 
-            if (!string.IsNullOrEmpty(name))
+            if (!doctors.Any())
             {
-                query = query.Where(u => u.Name.Contains(name));
+                return NotFound("No doctors found.");
             }
 
-            if (!string.IsNullOrEmpty(specialty))
-            {
-                query = query.Where(u => u.Specialty.Contains(specialty));
-            }
-
-            var doctors = await query.Where(u => u.Role == "Doctor").ToListAsync();
-            return Ok(doctors);
-        }
-
-        // GET: api/user/doctors/suggestions
-        [HttpGet("doctors/suggestions")]
-        public async Task<ActionResult<IEnumerable<string>>> GetDoctorSuggestions(string name)
-        {
-            if (string.IsNullOrEmpty(name))
-            {
-                return BadRequest("Name parameter is required.");
-            }
-
-            var suggestions = await _context.Users
-                .Where(u => u.Role == "Doctor" && u.Name.Contains(name))
-                .Select(u => u.Name)
-                .Distinct()
-                .Take(10)
-                .ToListAsync();
-
-            return Ok(suggestions);
+            return Ok(doctors); // Return the list of doctors as JSON
         }
     }
 }

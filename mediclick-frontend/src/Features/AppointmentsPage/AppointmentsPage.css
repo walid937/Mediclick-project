@@ -1,0 +1,48 @@
+/* src/Features/AppointmentsPage/AppointmentsPage.css */
+
+.appointments-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.doctor-details {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.appointment-form {
+    margin-top: 15px;
+}
+
+.appointment-form input {
+    margin: 5px 0;
+    padding: 8px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.confirm-button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+    background-color: #218838;
+}
+
+.status-message {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #28a745;
+}

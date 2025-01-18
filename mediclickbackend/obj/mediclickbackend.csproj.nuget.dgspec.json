@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\mediclickbackend.csproj": {}
+    "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET2\\mediclickbackend\\mediclickbackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\mediclickbackend.csproj": {
+    "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET2\\mediclickbackend\\mediclickbackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\mediclickbackend.csproj",
+        "projectUniqueName": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET2\\mediclickbackend\\mediclickbackend.csproj",
         "projectName": "mediclickbackend",
-        "projectPath": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\mediclickbackend.csproj",
+        "projectPath": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET2\\mediclickbackend\\mediclickbackend.csproj",
         "packagesPath": "C:\\Users\\marjane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET\\mediclickbackend\\obj\\",
+        "outputPath": "C:\\Users\\marjane\\OneDrive\\Bureau\\CABINET2\\mediclickbackend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -57,6 +57,14 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",

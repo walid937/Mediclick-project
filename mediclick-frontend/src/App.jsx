@@ -7,7 +7,7 @@ import LandingPage from './Features/landing/LandingPage';
 import AboutUs from './Features/AboutUs/AboutUs';
 import PatientHomePage from './Features/PatientHomePage/PatientHomePage'; // Import the PatientHomePage component
 import DoctorHomePage from './Features/DoctorHomePage/DoctorHomePage';
-
+import AppointmentsPage from './Features/AppointmentsPage/AppointmentsPage';
 
 const App = () => {
   return (
@@ -19,6 +19,8 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/PatientHomePage" element={<PatientHomePage />} />
         <Route path="/DoctorHomePage" element={<DoctorHomePage />} />
+        {/* Change the route path to '/appointments' */}
+        <Route path="/appointments" element={<AppointmentsPage />} />
       </Routes>
     </Router>
   );

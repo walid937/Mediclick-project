@@ -16,8 +16,8 @@ namespace mediclickbackend.Data
         // DbSet for the User model
         public DbSet<User> Users { get; set; }
 
-        // DbSet for the Doctor model
-        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
+
 
         // Override OnModelCreating to configure the models
         protected override void OnModelCreating(ModelBuilder modelBuilder)

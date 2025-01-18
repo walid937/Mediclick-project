@@ -3,17 +3,15 @@ import Autosuggest from "react-autosuggest";
 import "./SearchButton.css";
 import api from "../../services/api"; // Import the API service
 
-const SearchButton = () => {
-    const [searchTerm, setSearchTerm] = useState(""); // State for doctor name
-    const [specialty, setSpecialty] = useState(""); // State for specialty
+const SearchButton = ({ onSearch }) => {
+    const [searchTerm, setSearchTerm] = useState(""); // State for doctor name or specialty
     const [suggestions, setSuggestions] = useState([]); // State for autosuggest suggestions
-    const [doctors, setDoctors] = useState([]); // State to store fetched doctors
 
     // Fetch suggestions from the API based on the input value
     const fetchSuggestions = async (value) => {
         try {
             const response = await api.get("/user/doctors/suggestions", {
-                params: { name: value },
+                params: { query: value }, // Search both name and specialty
             });
             setSuggestions(response.data); // Set fetched suggestions
         } catch (error) {
@@ -32,22 +30,22 @@ const SearchButton = () => {
     };
 
     // Get the value to be displayed in the input field when a suggestion is selected
-    const getSuggestionValue = (suggestion) => suggestion.name;
+    const getSuggestionValue = (suggestion) => suggestion.name || suggestion.specialty;
 
     // Render each suggestion in the dropdown
     const renderSuggestion = (suggestion) => (
         <div className="suggestion-item">
-            {suggestion.name} - {suggestion.specialty}
+            <strong>{suggestion.name}</strong> - {suggestion.specialty}
         </div>
     );
 
-    // Fetch doctors based on the search term and specialty
+    // Fetch doctors based on the search term
     const handleSearch = async () => {
         try {
-            const response = await api.get("/user/doctors", {
-                params: { name: searchTerm, specialty },
+            const response = await api.get("/doctor/search", {
+                params: { query: searchTerm }, // Pass the search term to the backend
             });
-            setDoctors(response.data);
+            onSearch(response.data);  // Pass the fetched doctors to the parent
         } catch (error) {
             console.error("Error fetching doctors:", error);
         }
@@ -59,7 +57,7 @@ const SearchButton = () => {
             <div className="search-bar">
                 <Autosuggest
                     inputProps={{
-                        placeholder: "Doctor Name",
+                        placeholder: "Search by Doctor Name or Specialty",
                         value: searchTerm,
                         onChange: (e, { newValue }) => setSearchTerm(newValue),
                     }}
@@ -69,16 +67,6 @@ const SearchButton = () => {
                     getSuggestionValue={getSuggestionValue}
                     renderSuggestion={renderSuggestion}
                 />
-                <select
-                    className="location-dropdown"
-                    value={specialty}
-                    onChange={(e) => setSpecialty(e.target.value)}
-                >
-                    <option value="">Specialty</option>
-                    <option value="Cardiologist">Cardiologist</option>
-                    <option value="Dermatologist">Dermatologist</option>
-                    {/* Add more specialties as needed */}
-                </select>
                 <button className="search-button" onClick={handleSearch}>
                     <img
                         src="/assets/Searchicon.svg"
@@ -88,35 +76,6 @@ const SearchButton = () => {
                     <span>Search</span>
                 </button>
             </div>
-
-            {/* Doctor List */}
-            {searchTerm && (
-                <div className="doctor-list">
-                    {doctors.map((doctor, index) => (
-                        <div className="doctor-item" key={index}>
-                            <div className="doctor-info">
-                                <img
-                                    src="/assets/Profileicon.svg"
-                                    alt="Doctor"
-                                    className="doctor-icon"
-                                />
-                                <div>
-                                    <p className="doctor-name">{doctor.name}</p>
-                                    <p className="doctor-specialty">{doctor.specialty}</p>
-                                    <p className="doctor-fee">{doctor.fee}</p>
-                                </div>
-                            </div>
-                            <button className="arrow-button">
-                                <img
-                                    src="/assets/Arrowicon.svg"
-                                    alt="Arrow"
-                                    className="arrow-icon"
-                                />
-                            </button>
-                        </div>
-                    ))}
-                </div>
-            )}
         </div>
     );
 };
