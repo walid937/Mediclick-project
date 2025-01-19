@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using mediclickbackend.Data;  // Ensure your Data namespace is included
@@ -37,6 +38,7 @@ public class AppointmentsController : ControllerBase
         {
             appointment.CreatedAt = DateTime.Now;
             appointment.UpdatedAt = DateTime.Now;
+            appointment.Status = appointment.Status ?? "Confirmed";
             _context.Appointments.Add(appointment);
             _context.SaveChanges();
             return Ok(new { success = true, message = "Appointment booked successfully." });

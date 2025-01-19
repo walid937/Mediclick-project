@@ -15,10 +15,10 @@ const PatientHeader = () => {
                 <nav className="nav-links">
                     <ul>
                         <li>
-                            <Link to="/Features/PatientHomePage">Home</Link>
+                            <Link to="/PatientHomePage">Home</Link>
                         </li>
                         <li>
-                            <Link to="/Features/Appointment">My Appointments</Link>
+                            <Link to="/MyAppointments">My Appointments</Link>
                         </li>
                         <li>
                             <Link to="/Features/Profile">Profile</Link>

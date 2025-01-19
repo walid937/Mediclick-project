@@ -1,65 +1,77 @@
+
 using mediclickbackend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllers();  // Use AddControllers for API controllers (not AddControllersWithViews)
+// Add services to the container
+builder.Services.AddControllers(); // API controllers
 
-// Add Entity Framework Core with SQL Server (change the connection string as needed)
+// Configure Entity Framework Core with SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configure authentication (you can skip this if not using JWT)
+// Configure JWT-based Authentication (optional, if JWT is used)
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
-        options.Authority = builder.Configuration["Jwt:Issuer"]; // Set your JWT issuer here
-        options.Audience = builder.Configuration["Jwt:Audience"]; // Set your JWT audience here
-        options.RequireHttpsMetadata = false; // Set to true in production
+        options.Authority = builder.Configuration["Jwt:Issuer"]; // Specify your JWT issuer
+        options.Audience = builder.Configuration["Jwt:Audience"]; // Specify your JWT audience
+        options.RequireHttpsMetadata = !builder.Environment.IsDevelopment(); // Enable HTTPS in production
     });
 
-// Add Authorization
+// Configure Authorization
 builder.Services.AddAuthorization();
 
-// Configure CORS to allow requests from React frontend
+// Configure CORS for cross-origin requests from the React frontend
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("AllowReactFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173") // React frontend's URL
+        policy.WithOrigins("http://localhost:5173") // Replace with your frontend's URL
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .AllowCredentials(); // Allow credentials if required
     });
 });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
+    app.UseHsts(); // Enable HSTS for production
+}
+else
+{
+    app.UseDeveloperExceptionPage(); // Enable developer exception page in development
 }
 
+// Middleware to enforce HTTPS
 app.UseHttpsRedirection();
+
+// Serve static files
 app.UseStaticFiles();
+
+// Enable request routing
 app.UseRouting();
 
-// Enable CORS
-app.UseCors("AllowAll");
+// Enable CORS with the configured policy
+app.UseCors("AllowReactFrontend");
 
-// Enable Authentication and Authorization middleware (you can skip if not using JWT)
+// Enable Authentication and Authorization (if JWT is used)
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Enable API controllers routing
-app.MapControllers();  // This line is necessary to enable API route mapping
+// Map API controllers
+app.MapControllers();
 
-// If you want to keep MVC routes (for views), you can still add this part:
+// Optional: Add MVC route mapping for mixed use (if you also serve Razor Pages or MVC views)
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+// Run the application
 app.Run();

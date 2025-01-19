@@ -68,8 +68,12 @@ const PatientHomePage = () => {
                                     <td>{doctor.specialty}</td>
                                     <td>{doctor.ville || "N/A"}</td>
                                     <td>
-                                        {/* Include the AppointmentButton */}
-                                        <AppointmentButton doctorId={doctor.id} />
+                                        {/* Include the AppointmentButton with the necessary props */}
+                                        <AppointmentButton
+                                            doctorId={doctor.id}
+                                            doctorName={doctor.name}  // Pass the doctor's name
+                                            doctorSpecialty={doctor.specialty}  // Pass the doctor's specialty
+                                        />
                                     </td>
                                 </tr>
                             ))

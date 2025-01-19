@@ -20,7 +20,7 @@ const Login = () => {
                 if (response.data.role === 'patient') {
                     navigate('/PatientHomePage');
                 } else {
-                    navigate('/dashboard'); // Redirect to dashboard for other roles
+                    navigate('/DoctorHomePage');
                 }
             }
         } catch (err) {

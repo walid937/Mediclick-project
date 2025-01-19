@@ -19,6 +19,7 @@ namespace mediclickbackend.Data
         public DbSet<Appointment> Appointments { get; set; }
 
 
+
         // Override OnModelCreating to configure the models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
