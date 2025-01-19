@@ -8,6 +8,7 @@ import AboutUs from './Features/AboutUs/AboutUs';
 import PatientHomePage from './Features/PatientHomePage/PatientHomePage'; // Import the PatientHomePage component
 import DoctorHomePage from './Features/DoctorHomePage/DoctorHomePage';
 import AppointmentsPage from './Features/AppointmentsPage/AppointmentsPage';
+import MyAppointments from './Features/MyAppointments/MyAppointments';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/DoctorHomePage" element={<DoctorHomePage />} />
         {/* Change the route path to '/appointments' */}
         <Route path="/appointments" element={<AppointmentsPage />} />
+        <Route path="/MyAppointments" element={<MyAppointments />} />
       </Routes>
     </Router>
   );

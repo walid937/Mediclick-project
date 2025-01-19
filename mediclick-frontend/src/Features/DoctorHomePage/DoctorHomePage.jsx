@@ -27,6 +27,27 @@ const DoctorHomePage = () => {
         fetchDoctorData();
     }, []);
 
+    // Handle appointment confirmation
+    const handleConfirm = async (id) => {
+        try {
+            const response = await api.put(`/api/appointments/confirm/${id}`);
+            if (response.data.success) {
+                // Update the appointments list locally to reflect the status change
+                setAppointments((prevAppointments) =>
+                    prevAppointments.map((appointment) =>
+                        appointment.id === id
+                            ? { ...appointment, status: 'confirmed' }
+                            : appointment
+                    )
+                );
+            } else {
+                alert(response.data.message);
+            }
+        } catch (error) {
+            console.error('Error confirming appointment:', error);
+        }
+    };
+
     return (
         <div className="doctor-homepage">
             <div className="sidebar">
@@ -64,6 +85,7 @@ const DoctorHomePage = () => {
                                         <th>Patient Name</th>
                                         <th>Appointment Date</th>
                                         <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -72,6 +94,13 @@ const DoctorHomePage = () => {
                                             <td>{appointment.patientName}</td>
                                             <td>{new Date(appointment.date).toLocaleString()}</td>
                                             <td>{appointment.status}</td>
+                                            <td>
+                                                {appointment.status === 'pending' && (
+                                                    <button onClick={() => handleConfirm(appointment.id)}>
+                                                        Confirm
+                                                    </button>
+                                                )}
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>

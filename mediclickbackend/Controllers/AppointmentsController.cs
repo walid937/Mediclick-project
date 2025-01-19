@@ -38,7 +38,7 @@ public class AppointmentsController : ControllerBase
         {
             appointment.CreatedAt = DateTime.Now;
             appointment.UpdatedAt = DateTime.Now;
-            appointment.Status = appointment.Status ?? "Confirmed";
+            appointment.Status = appointment.Status ?? "pending";
             _context.Appointments.Add(appointment);
             _context.SaveChanges();
             return Ok(new { success = true, message = "Appointment booked successfully." });
@@ -82,4 +82,24 @@ public class AppointmentsController : ControllerBase
 
         return Ok(new { success = false, message = "Appointment not found." });
     }
+    // PUT: /api/appointments/confirm/{id}
+    [HttpPut("confirm/{id}")]
+    public ActionResult Confirm(int id)
+    {
+        var appointment = _context.Appointments.Find(id);
+        if (appointment == null)
+        {
+            return NotFound(new { success = false, message = "Appointment not found." });
+        }
+
+        if (appointment.Status == "pending")
+        {
+            appointment.Status = "confirmed";
+            _context.SaveChanges();
+            return Ok(new { success = true, message = "Appointment confirmed successfully." });
+        }
+
+        return BadRequest(new { success = false, message = "Appointment is already confirmed." });
+    }
+
 }

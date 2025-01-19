@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mediclickbackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+744522d587f1543975503d5c283a5b99df02eaae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3fd4483eae857bb3d72748ec0506d0b906ba1d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("mediclickbackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mediclickbackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
